@@ -5,4 +5,4 @@ without recreating every thing from the basic .
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://dynamic.com/docs).
+Documentation for the framework can be found on the [dynamic menu](http://dynamic.com/docs).
