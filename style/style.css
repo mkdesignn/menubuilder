@@ -1,0 +1,46 @@
+.mk_menu_wrapper.vertical_menu ul{
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+}
+
+.mk_menu_wrapper.vertical_menu {
+    width:300px;
+    border:1px solid rgba(42,42,42,.2);
+}
+
+
+.mk_menu_wrapper.vertical_menu ul:first-child > li{
+    display:block;
+}
+
+.mk_menu_wrapper.vertical_menu .slideDown{
+    -moz-transition-duration: 0.9s;
+    -webkit-transition-duration: 0.9s;
+    -o-transition-duration: 0.9s;
+    transition-duration: 0.9s;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+.mk_menu_wrapper.vertical_menu .slideUp{
+
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
