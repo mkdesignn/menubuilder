@@ -6,7 +6,6 @@
         "laravel/framework": ">=5.1"
     },
     "license": "mit",
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Mkdesignn\\MenuBuilder\\": "src/"
