@@ -4,7 +4,7 @@ namespace Mkdesignn\MenuBuilder;
 
 use Mkdesignn\MenuBuilder\ConvertHex;
 
-class Menu extends IMenu
+class Menu
 {
 
     private $colors = [
@@ -174,73 +174,23 @@ class Menu extends IMenu
     protected function create($parent, $render_type){
 
         $this->convertHex = new ConvertHex();
-//        dd( $this->convertHex->colorLuminance("#A68A7E", -0.1), $this->convertHex->colorLuminance("#A68A7E", -0.2));
 
         if( $render_type == "vertical" ){
-
+            $vertical = new VerticalMenu($parent);
             return "<div class='mk_menu_wrapper vertical_menu' style='background-color:".
-                    $this->getConfig($this->config, "background-color").";font-family:".
-                    $this->getConfig($this->config, "font-family")."'>".$this->createVerticalMenu($parent)."</div>";
-//            dd(self::$testy);
+            $this->getConfig($this->config, "background-color").";direction:".$this->getConfig($this->config, "direction")
+            .";font-family:".$this->getConfig($this->config, "font-family")."'>".$vertical->createMenu($parent)."</div>";
         }
         else
-            return "<div class='mk_menu_wrapper horzintal_menu'>".$this->createHorzintalMenu($parent)."</div>";
+            $horizontal = new HorizontalMenu($parent);
     }
 
-    /**
-     * Create vertical menu
-     *
-     * @param $parents
-     * @param string $slide_up
-     * @return string
-     */
-    private function createVerticalMenu($parents, $slide_up = ""){
-
-        $html = "";
-        $html .= "<ul class='".$this->class_name." ".$slide_up."'>";
-
-        foreach( $parents as $key => $value ){
-
-            if( $this->table->where("parent_id", $value)->count() > 0 ){
-
-                $html .= "<li><div class='".$this->class_name."_li'> ".
-                        $this->printCheckbox($value). $this->getAnchorTag($value) .$this->removeButton($value)."</div>";
-
-                $this->changeColor("add")->changePadding("add");
-                $this->level .= " - ";
-                $html .= $this->createVerticalMenu($this->table->where("parent_id", $value)->get()->pluck("id", "id"), "slideUp");
-                $html .= "</li>";
-
-            } else {
-
-                $html .= "<li> <div class='".$this->class_name."_li'> ".
-                    $this->printCheckbox($value).$this->getAnchorTag($value).$this->removeButton($value)."</div> </li>";
-            }
-
-        }
-
-        $this->ascendLevel();
-        $this->changeColor("sub")->changePadding("sub");
-        $html .= "</ul>";
-
-        return $html;
-    }
-
-
-    /**
-     * Create Horizontal Menu
-     *
-     * @param $parents
-     */
-    private function createHorizontalMenu($parents){
-
-    }
 
     /**
      * @param $value
      * @return string
      */
-    private function getAnchorTag($value){
+    protected function getAnchorTag($value){
 
         $classes = ( $this->getLiTitle($value, "classes") == null ) ? null : $this->getLiTitle($value, "classes");
 
@@ -263,7 +213,7 @@ class Menu extends IMenu
      * @param $id
      * @return string
      */
-    private function getAnchorHoverColor( $anchor_back_color, $id ){
+    protected function getAnchorHoverColor( $anchor_back_color, $id ){
 
         if( $this->getLiTitle($id, "hover_color") != null )
             return "hover='".$this->getLiTitle($id, "hover_color")."'";
@@ -288,7 +238,7 @@ class Menu extends IMenu
      * @param $id
      * @return string
      */
-    private function getAnchorBackgroundColor($id){
+    protected function getAnchorBackgroundColor($id){
 
         // if the are any backgroundColor field then we can use it as a background color for the
         // current li
@@ -311,7 +261,7 @@ class Menu extends IMenu
     /**
      * @return string
      */
-    private function getAnchorPadding(){
+    protected function getAnchorPadding(){
 
         if( $this->link_padding != null )
             return "padding-right:".$this->link_padding."px";
@@ -325,7 +275,7 @@ class Menu extends IMenu
      * @param $value
      * @return string
      */
-    private function getAnchorBorder($value){
+    protected function getAnchorBorder($value){
         if( $this->getConfig($this->config, "border") != null ){
             return "border-right:".$this->getConfig($this->config, "border")." solid ".$this->getLiTitle($value, "color");
         }
@@ -334,7 +284,7 @@ class Menu extends IMenu
     /**
      * @return string
      */
-    private function getAnchorColor(){
+    protected function getAnchorColor(){
 
         if( $this->getConfig($this->config, "color") != null ){
             return "color:".$this->getConfig($this->config, "color");
@@ -348,7 +298,7 @@ class Menu extends IMenu
      * @param $temp
      * @return $this
      */
-    private function changeColor($temp){
+    protected function changeColor($temp){
 
         $brightness = null;
 
@@ -397,7 +347,7 @@ class Menu extends IMenu
      * @param $temp
      * @return $this
      */
-    private function changePadding($temp){
+    protected function changePadding($temp){
 
         if( $this->getConfig($this->config, "padding") == null ) {
             $this->link_padding = null;
@@ -421,7 +371,7 @@ class Menu extends IMenu
      * @param $value
      * @return string
      */
-    private function printCheckbox($value){
+    protected function printCheckbox($value){
         if( $this->getConfig($this->config, "checkbox") == true ){
             return '<div class="checkbox checkbox-info" style="margin:0px;"><input id="'.$value.'" value="'.$value.'" class="styled" name="tag_id[]" type="checkbox">'.
             '<label for="'.$value.'">'.
@@ -436,11 +386,8 @@ class Menu extends IMenu
      */
     protected function ascendLevel(){
         $level = explode(' ', $this->level);
-//        unset($level[count($level)]);unset($level[count($level) - 1]);unset($level[count($level) - 2]);
         unset($level[count($level)-1]);
         unset($level[count($level)-1]);
-//        unset($level[count($level)-1]);
-//        $level = array_splice($level, 0, 2);
         $this->level = implode(" ", $level);
     }
 
@@ -448,7 +395,7 @@ class Menu extends IMenu
      * @param $id
      * @return string
      */
-    private function removeButton($id){
+    protected function removeButton($id){
         if( $this->getConfig($this->config, "delete_button") == true ){
             return "<a v-on:click='showAlarm(".$id.")' class='remove_tag' id='".$id."' href='#'><span class='icomoon-uniE026'></span></a>";
         }

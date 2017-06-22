@@ -35,7 +35,7 @@ class MenuProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Menu', function($app){
-            $menu = $this->app->make('Mkdesignn\MenuBuilder\Menu');
+            $menu = $this->app->make('Mkdesignn\MenuBuilder\FactoryMenu');
             $menu->setConfig($this->app['config']["menu"]);
             return $menu;
         });
