@@ -3,7 +3,7 @@
     "description": "menu builder is a package which can make you a menu by the input config",
     "require": {
         "php": ">=5.5.9",
-        "laravel": ">=5.1.*"
+        "laravel/framework": ">=5.1.*"
     },
     "license": "mit",
     "autoload": {
