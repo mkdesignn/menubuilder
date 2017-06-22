@@ -5,4 +5,4 @@ without recreating every thing from the basic .
 
 ## Official Documentation
 
-Documentation for the package can be found on the [dynamic menu](http://dynamic.com/docs).
+Documentation for the package can be found on the [dynamic menu](https://mkdesignn.github.io/menubuilder/).
