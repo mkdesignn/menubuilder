@@ -18,5 +18,3 @@ composer require mkdesignn/menubuilder
 ### Step 2: Add Facade class
    'Menu'      => Mkdesignn\MenuBuilder\Facade::class
 
-
-
