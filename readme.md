@@ -5,4 +5,18 @@ without recreating every thing from the basic .
 
 installing the package
 
+## Usage
+
+### step 1: install it through composer
+```
+composer require mkdesignn/menubuilder
+```
+
+### Step 2: Add the Service Provider
+    Mkdesignn\MenuBuilder\MenuProvider::class
+
+### Step 2: Add Facade class
+   'Menu'      => Mkdesignn\MenuBuilder\Facade::class
+
+
 
