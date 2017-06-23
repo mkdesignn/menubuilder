@@ -41,16 +41,8 @@ The class that pass to the render method should be extends model abstract class
 the table tag that has been passed to the render method has the below structure
 
 | id  | parent_id | name | slug | description | bg_color | bg_hover_color | text_color | text_hover_color |
-| --- | --- |
-| 1  | 0  |  Php  |  Php |   |   |   |   |   |
-| 2  | 0  |  Javascript  | Javascript  |   |   |   |   |   |
-| 3  | 2 |  Jquery  |   |   |   |   |   |   |
-| 4  | 2  | Vue.js  |   |   |   |   |   |   |
-| 5  | 2  | node.js  |   |   |   |   |   |   |
-| 6  | 1  | laravel  |   |   |   |   |   |   |
-| 7  | 1  | symphony  |   |   |   |   |   |   |
-| 8  | 5  | npm  |   |   |   |   |   |   |
-| 9  | 4  | vuex  |   |   |   |   |   |   |
+| --- | ---       | ---  | ---  | ---         | ---      | ---            | ---        | ---              |
+| 1   | 0         |  Php |  Php |             |          |                |            |                  |
 
 
 third argument is the class that we use it as a ul.selector to add some css attribute to it .
