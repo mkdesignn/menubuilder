@@ -13,14 +13,18 @@ composer require mkdesignn/menubuilder
 ```
 
 ### Step 2: Add the Service Provider
-    Mkdesignn\MenuBuilder\MenuProvider::class
+```
+Mkdesignn\MenuBuilder\MenuProvider::class
+```
 
 ### Step 2: Add Facade class
-   'Menu'      => Mkdesignn\MenuBuilder\Facade::class
+```
+'Menu'      => Mkdesignn\MenuBuilder\Facade::class
+```
 
 ### step 3: publish the vendor files
 ```
-    php artisan vendor:publish
+php artisan vendor:publish
 ```
 
 ## Examples
@@ -28,7 +32,7 @@ composer require mkdesignn/menubuilder
 ## Create simple menu
 
 ```
-    echo Menu::render('vertical', new \App\Tag(), "vertical-menu");
+echo Menu::render('vertical', new \App\Tag(), "vertical-menu");
 ```
 this way we can build simple menu, as you can see render method takes 3 argument which I describe each of them in the below.
 
