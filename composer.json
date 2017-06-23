@@ -2,7 +2,6 @@
     "name": "mkdesignn/menubuilder",
     "description": "menu builder is a package which can make you a menu by the input config",
     "require": {
-        "php": ">=5.5.9",
         "laravel/framework": ">=5.1"
     },
     "license": "mit",

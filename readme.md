@@ -68,7 +68,8 @@ The third argument passed to the render method, it's a class selector which we c
 mk_menu will be using as the default class .
 
 ### fourth argument
-we have fourth argument which we can use it, the fourth argument should be an array and it'll be using for the configuration .
+we have fourth argument which we can use it as configuration, the fourth argument should be an array and it'll be using for the configuration .
 
+that's it, not you can enjoy it .
 
 
