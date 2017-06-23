@@ -36,8 +36,8 @@ this way we can build simple menu, as you can see render method takes 3 argument
 first argument Is the type of the menu which wants to be created
 
 ### second argument
-second argument is the table which we need to use it as a source
-The class that pass to the render method should be extends model abstract class
+second argument is the table which we need to use it as a source.
+The class that pass to the render method should be extends model abstract class.
 the table tag that has been passed to the render method has the below structure
 
 | id  | parent_id | name | slug | bg_color | bg_hover_color | text_color | text_hover_color |
@@ -45,7 +45,12 @@ the table tag that has been passed to the render method has the below structure
 |  1  |     0     | Php  | Php  |          |                |            |                  |
 |  2  |     0     |  Javascript | Javascript |              |            |                  |                  |
 |  3  |     2     | JQuery |  JQuery |     |                |            |                  |
-
+|  4  |     2     | Vue.js | Vue.js |      |                |            |                  |
+|  5  |     2     | Node.js|Node.js |      |                |            |                  |
+|  5  |     1     | Laravel|Laravel |      |                |            |                  |
+|  5  |     1     | Symphony|Symphony |    |                |            |                  |
+|  5  |     5     | Npm|Npm           |    |                |            |                  |
+|  5  |     4     | Vuex|Vuex         |    |                |            |                  |
 
 third argument is the class that we use it as a ul.selector to add some css attribute to it .
 
