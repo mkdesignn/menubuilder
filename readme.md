@@ -42,7 +42,9 @@ the table tag that has been passed to the render method has the below structure
 
 | id  | parent_id | name | slug | description | bg_color | bg_hover_color | text_color | text_hover_color |
 | --- | ---       | ---  | ---  | ---         | ---      | ---            | ---        | ---              |
-| 1   | 0         |  Php |  Php |             |          |                |            |                  |
+|  1  |     0     | Php  | Php  |             |          |                |            |                  |
+|  2  |     0     |  Javascript  | Javascript |          |                |            |                  |   |
+
 
 
 third argument is the class that we use it as a ul.selector to add some css attribute to it .
