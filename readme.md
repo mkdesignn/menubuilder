@@ -18,3 +18,17 @@ composer require mkdesignn/menubuilder
 ### Step 2: Add Facade class
    'Menu'      => Mkdesignn\MenuBuilder\Facade::class
 
+### step 3: publish the vendor files
+    ```
+        php artisan vendor:publish
+    ```
+
+## Examples
+
+## Create simple menu
+
+    ```
+        echo Menu::render('vertical', new \App\Tag(), "vertical-menu");
+    ```
+this way we can build simple menu
+
