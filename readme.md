@@ -70,6 +70,11 @@ mk_menu will be using as the default class .
 ### fourth argument
 we have fourth argument which we can use it as configuration, the fourth argument should be an array and it'll be using for the configuration .
 
-that's it, not you can enjoy it .
+## some of the examples
 
+```
+echo Menu::render('vertical', new \App\Tag(), "test");
+```
+
+![Captchas examples](http://codedesign.iruploads/menu_2017-06-24_22-27-26.png)
 
