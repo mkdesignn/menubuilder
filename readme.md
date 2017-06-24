@@ -76,5 +76,5 @@ we have fourth argument which we can use it as configuration, the fourth argumen
 echo Menu::render('vertical', new \App\Tag(), "test");
 ```
 
-![Captchas examples](http://codedesign.iruploads/menu_2017-06-24_22-27-26.png)
+![Captchas examples](http://codedesign.ir/uploads/menu_2017-06-24_22-45-45.png)
 
