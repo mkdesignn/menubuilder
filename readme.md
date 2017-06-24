@@ -1,6 +1,6 @@
 ## Dynamic menu builder
 
-dynamic menu builder is a way to create your menu in a quick and easy manner. I'm always wanted a way to generate a menu
+dynamic menu builder is a way to create your menu in a quick and easy manner. I'v always wanted a way to generate a menu
 without recreating everything from the basic.
 
 installing the package
