@@ -1,14 +1,62 @@
-.mk_menu_wrapper.vertical_menu ul{
+.mk_menu_wrapper{
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+.mk_menu_wrapper.vertical_menu{
+    width:300px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color:#fafafa;
+    box-shadow: 0px 0px 10px 3px rgba(42,42,42,.2);
+}
+
+.mk_menu_wrapper ul{
     list-style-type: none;
     padding:0px;
     margin:0px;
 }
 
-.mk_menu_wrapper.vertical_menu {
-    width:300px;
-    border:1px solid rgba(42,42,42,.2);
+.parent_li{
+    position: absolute;
+    right: 8px;
+    width: 0px;
+    height: 0px;
+    top: 18px;
+    font-size: 14px;
 }
 
+.sub_li{
+    position: absolute;
+    right: 10px;
+    width: 0px;
+    height: 0px;
+    top: 21px;
+    font-size: 11px;
+}
+
+.mk_menu_wrapper ul li a{
+    padding:15px 30px 15px 15px;
+    display:block;
+    text-decoration: none;
+    color:#407c96;
+    text-align: right;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    position:relative;
+}
+
+.mk_menu_wrapper.vertical_menu ul li a:hover{
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
 
 .mk_menu_wrapper.vertical_menu ul:first-child > li{
     display:block;
@@ -44,3 +92,62 @@
     -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
+
+/** ---------------------  horizontal Menu style ---------------------- **/
+
+.mk_menu_wrapper.horizontal_menu{
+
+    width: 80%;
+    border:1px solid rgba(42,42,42,.2);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color:#fafafa;
+    box-shadow: 0px 0px 10px 3px rgba(42,42,42,.2);
+    margin: 100px auto auto;
+}
+
+.mk_menu_wrapper.horizontal_menu ul ul ul{
+    right:100%;
+    top:3%;
+}
+
+.mk_menu_wrapper.horizontal_menu ul li{
+    position:relative;
+}
+
+.mk_menu_wrapper.horizontal_menu > ul > li{
+    display:inline-block;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.mk_menu_wrapper.horizontal_menu li > div:hover > ul{
+    position:absolute;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    visibility:visible;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+.mk_menu_wrapper.horizontal_menu li ul{
+    position:absolute;
+    margin-top:-2px;
+    z-index:1;
+    visibility:hidden;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
