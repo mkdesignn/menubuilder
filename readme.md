@@ -3,7 +3,7 @@
 dynamic menu builder is a quick and easy way to create your menu. I'v always wanted a way to generate a menu
 without recreating everything from the Base.
 
-installing the package
+> note, vue.js ver2 will needed for this project.
 
 ## Usage
 
@@ -26,8 +26,9 @@ Mkdesignn\MenuBuilder\MenuProvider::class
 ```
 PHP artisan vendor: publish
 ```
-above command will publish menu folder which this folder contains two files, index.js and style.css which both of them should be included and also this command
-also, will publish menu.php config file.
+above command will publish menu folder which contains two files, index.js and style.css which both of them should be included and also this command
+will publish menu.php config file.
+
 ## Examples
 
 ## Create simple menu
